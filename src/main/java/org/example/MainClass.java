@@ -44,7 +44,8 @@ public class MainClass {
     public static void main(String[] args) {
         System.out.println("1");
         try {
-            port(8092); // server on http://localhost:4567
+            port(Integer.parseInt(System.getenv("PORT")));
+//            port(8092); // server on http://localhost:4567
             Gson gson = new Gson();
 
             get("/rates/rajkot", (req, res) -> {
